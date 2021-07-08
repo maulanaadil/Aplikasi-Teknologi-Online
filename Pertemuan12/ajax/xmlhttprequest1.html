@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>XMLHttpRequest 1</title></head>
+<body>
+<script>
+function updateIsi(kota){
+	document.getElementById("isi").innerHTML ="";
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+        alert("ReadyState Sekarang : " + this.readyState);
+		if (this.readyState == 4 && this.status == 200) {
+			response = xhr.responseText;
+			document.getElementById("isi").innerHTML += response;
+		}
+	};
+	xhr.open("GET", kota+".txt", true);
+	xhr.send();
+}
+</script>
+<body>
+<button onclick="updateIsi('bandung')">Bandung</button> 
+<button onclick="updateIsi('jakarta')">Jakarta</button>
+<button onclick="updateIsi('surabaya')">Surabaya</button><br> 
+
+<div id="isi" style="border:1px solid black;padding:10px">Klik kota di atas</div>
+</body>
+</html>

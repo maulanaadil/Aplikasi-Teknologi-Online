@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Demo HTML DOM + Javascript 2</title></head>
+<body>
+<table border="1">
+<tr><td>Provinsi</td>
+	<td><select id="provinsi" onchange="updatePilihanKabKota()">
+			<option value="">Pilih Provinsi</option>
+			<option value="JABAR">Jawa Barat</option>
+			<option value="JATENG">Jawa Tengah</option>
+		</select></td></tr>
+<tr><td>Kab/Kota</td>
+	<td><select id="kabkota">
+			<option value="">Pilih Kabupaten/Kota</option>
+		</select></td></tr>
+</table>
+<script>
+function updatePilihanKabKota(){
+	var selectedIndex=document.getElementById("provinsi").selectedIndex;
+	var prov=document.getElementById("provinsi").options[selectedIndex].value;
+	var cb=document.getElementById("kabkota");
+	// hapus option sebelumnya
+	while(cb.length>1)
+		cb.remove(1);
+	if(prov=="JABAR"){
+		var bandung=document.createElement("option");
+		bandung.text="Bandung";bandung.value="BDG";
+		var tasik=document.createElement("option");
+		tasik.text="Tasikmalaya";tasik.value="TSM";
+		var ciamis=document.createElement("option");
+		ciamis.text="Sweetwater";ciamis.value="CMS";
+		cb.add(bandung);// tambahkan option ke combobox
+		cb.add(tasik);
+		cb.add(ciamis);
+	}
+	else if(prov=="JATENG"){
+		var semarang=document.createElement("option");
+		semarang.text="Semarang";semarang.value="SMR";
+		var cilacap=document.createElement("option");
+		cilacap.text="Cilacap";cilacap.value="CLP";
+		cb.add(semarang);// tambahkan option ke combobox
+		cb.add(cilacap);
+	}
+}
+</script>
+</body>
+</html>

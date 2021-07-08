@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>JSON 1</title></head>
+<body>
+<script>
+function tampilJSON(){
+	var data={"kelas":"ATOL",
+	          "tahun":2017,
+			  "mahasiswa":[
+				{"nama":"Aa","nilai":90},
+				{"nama":"Bebe","nilai":70},
+				{"nama":"Cece","nilai":85}
+			  ]
+			  };
+	var isi=document.getElementById("isi");
+	isi.innerHTML=data.kelas+"<br>";
+	isi.innerHTML+=data["tahun"]+"<br>";
+	isi.innerHTML+="Peserta Kelas : "+data.mahasiswa.length+"<br>";
+	for(var i=0;i<data.mahasiswa.length;i++){
+		isi.innerHTML+=data.mahasiswa[i].nama+" dengan nilai "+
+					   data.mahasiswa[i].nilai+"<br>";
+	}
+}
+</script>
+<body onload="tampilJSON()">
+<div id="isi"></div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "jabar": {
+        "nama": "Jawa Barat",
+        "ibukota": "Bandung"
+    },
+    "jateng": {
+        "nama": "Jawa Tengah",
+        "ibukota": "Semarang"
+    },
+    "jatim": {
+        "nama": "Jawa Timur",
+        "ibukota": "Surabaya"
+    }
+}

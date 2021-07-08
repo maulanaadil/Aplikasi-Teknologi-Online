@@ -1,0 +1,28 @@
+.text-row-center > tr,
+.text-row-center > td {
+    text-align: center;
+}
+
+tr:nth-child(2n+2) {
+    background: white;
+}
+
+tr:nth-child(2n+3) {
+    background: silver;
+}
+
+td {
+    text-align: right;
+}
+
+.tengah {
+    text-align: center;
+}
+
+baris_ganjil {
+    background-color: white;
+}
+
+baris_genap {
+    background-color: silver;
+}
